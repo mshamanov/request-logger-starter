@@ -28,14 +28,31 @@ public class LoggingRequestFilter extends OncePerRequestFilter {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        ContentCachingRequestWrapper req = new ContentCachingRequestWrapper(request);
-        ContentCachingResponseWrapper resp = new ContentCachingResponseWrapper(response);
+        ContentCachingRequestWrapper req = this.wrapRequest(request);
+        ContentCachingResponseWrapper resp = this.wrapResponse(response);
 
-        filterChain.doFilter(req, resp);
+        try {
+            filterChain.doFilter(req, resp);
+        } finally {
+            stopWatch.stop();
+            this.loggingRequestHandler.log(req, resp, stopWatch);
+            resp.copyBodyToResponse();
+        }
+    }
 
-        stopWatch.stop();
+    private ContentCachingRequestWrapper wrapRequest(HttpServletRequest request) {
+        if (request instanceof ContentCachingRequestWrapper) {
+            return (ContentCachingRequestWrapper) request;
+        } else {
+            return new ContentCachingRequestWrapper(request);
+        }
+    }
 
-        this.loggingRequestHandler.log(req, resp, stopWatch);
-        resp.copyBodyToResponse();
+    private ContentCachingResponseWrapper wrapResponse(HttpServletResponse response) {
+        if (response instanceof ContentCachingResponseWrapper) {
+            return (ContentCachingResponseWrapper) response;
+        } else {
+            return new ContentCachingResponseWrapper(response);
+        }
     }
 }
