@@ -128,6 +128,7 @@ class CommonLoggingRequestHandlerTest {
         System.out.println(responseLogMsg);
 
         assertThat(responseLogMsg).contains("Status: " + this.response.getStatus());
+
         for (String header : this.response.getHeaderNames()) {
             assertThat(responseLogMsg).contains(header);
         }
