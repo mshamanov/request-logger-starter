@@ -42,7 +42,7 @@ public class CommonLoggingRequestHandler extends AbstractLoggingRequestHandler {
                         key.equals(CommonLoggingRequestHandler.PARAMETERS)) {
                         value = System.lineSeparator() + Pattern.compile(System.lineSeparator())
                                 .splitAsStream(value)
-                                .map(line -> "\t└─ " + line)
+                                .map(line -> "\t\\_ " + line)
                                 .collect(Collectors.joining(System.lineSeparator()));
                     }
 
