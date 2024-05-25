@@ -10,10 +10,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mash</groupId>
-    <artifactId>request-example</artifactId>
+    <artifactId>request-logger-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>request-example</name>
-    <description>request-example</description>
+    <name>request-logger-example</name>
+    <description>request-logger-example</description>
     <properties>
         <java.version>21</java.version>
     </properties>
@@ -23,15 +23,18 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>annotationProcessor</scope>
         </dependency>
         <dependency>
             <groupId>com.mash</groupId>
             <artifactId>request-logger-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 

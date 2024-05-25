@@ -1,6 +1,6 @@
-package com.mash.requestexample.model;
+package com.mash.requestloggerexample.model;
 
-import com.mash.requestexample.controller.ExampleController;
+import com.mash.requestloggerexample.controller.ExampleController;
 import lombok.Data;
 
 /**

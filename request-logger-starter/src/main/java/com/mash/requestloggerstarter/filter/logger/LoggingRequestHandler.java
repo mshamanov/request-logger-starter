@@ -12,5 +12,12 @@ import org.springframework.web.util.ContentCachingResponseWrapper;
  */
 @FunctionalInterface
 public interface LoggingRequestHandler {
+    /**
+     * Logs request and response as well as any other additional information.
+     *
+     * @param request   cached request
+     * @param response  cached response
+     * @param stopWatch timing data between request and response
+     */
     void log(ContentCachingRequestWrapper request, ContentCachingResponseWrapper response, StopWatch stopWatch);
 }

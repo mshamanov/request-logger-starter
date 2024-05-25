@@ -1,4 +1,4 @@
-package com.mash.requestexample.advice;
+package com.mash.requestloggerexample.advice;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;

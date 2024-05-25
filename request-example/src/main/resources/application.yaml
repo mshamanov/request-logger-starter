@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: "request-example"
-request-logger:
-  enabled: true
