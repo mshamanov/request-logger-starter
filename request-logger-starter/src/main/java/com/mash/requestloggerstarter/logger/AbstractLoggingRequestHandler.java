@@ -1,4 +1,4 @@
-package com.mash.requestloggerstarter.filter.logger;
+package com.mash.requestloggerstarter.logger;
 
 import com.mash.requestloggerstarter.filter.LoggingRequestFilter;
 import org.springframework.http.HttpStatus;

@@ -1,8 +1,8 @@
 package com.mash.requestloggerstarter.config;
 
 import com.mash.requestloggerstarter.filter.LoggingRequestFilter;
-import com.mash.requestloggerstarter.filter.logger.LoggingRequestHandler;
-import com.mash.requestloggerstarter.filter.logger.CommonLoggingRequestHandler;
+import com.mash.requestloggerstarter.logger.LoggingRequestHandler;
+import com.mash.requestloggerstarter.logger.CommonLoggingRequestHandler;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

@@ -1,5 +1,6 @@
 package com.mash.requestloggerstarter.filter.logger;
 
+import com.mash.requestloggerstarter.logger.CommonLoggingRequestHandler;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

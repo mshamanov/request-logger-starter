@@ -1,6 +1,6 @@
 package com.mash.requestloggerstarter.filter;
 
-import com.mash.requestloggerstarter.filter.logger.CommonLoggingRequestHandler;
+import com.mash.requestloggerstarter.logger.CommonLoggingRequestHandler;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
