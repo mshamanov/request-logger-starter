@@ -13,6 +13,12 @@ import org.springframework.web.util.ContentCachingResponseWrapper;
 
 import java.io.IOException;
 
+/**
+ * Filter to log incoming requests and responses to these requests.
+ * The actual logging logic must be provided by implementing the {@link LoggingRequestHandler} interface.
+ *
+ * @author Mikhail Shamanov
+ */
 public class LoggingRequestFilter extends OncePerRequestFilter {
 
     private final LoggingRequestHandler loggingRequestHandler;
@@ -40,6 +46,13 @@ public class LoggingRequestFilter extends OncePerRequestFilter {
         }
     }
 
+    /**
+     * Wraps the request as {@link ContentCachingRequestWrapper} to be able to cache the content read from the
+     * input stream and reader.
+     *
+     * @param request incoming request
+     * @return request wrapped as {@link ContentCachingRequestWrapper}
+     */
     private ContentCachingRequestWrapper wrapRequest(HttpServletRequest request) {
         if (request instanceof ContentCachingRequestWrapper) {
             return (ContentCachingRequestWrapper) request;
@@ -48,6 +61,13 @@ public class LoggingRequestFilter extends OncePerRequestFilter {
         }
     }
 
+    /**
+     * Wraps the response as {@link ContentCachingResponseWrapper} to be able to cache the content written to the
+     * output stream and writer.
+     *
+     * @param response outgoing response
+     * @return response wrapped as {@link ContentCachingResponseWrapper}
+     */
     private ContentCachingResponseWrapper wrapResponse(HttpServletResponse response) {
         if (response instanceof ContentCachingResponseWrapper) {
             return (ContentCachingResponseWrapper) response;
